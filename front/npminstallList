@@ -1,3 +1,9 @@
+사용하는 라이브러리 
+next.js, 
+react.js, 
+antd
+
+
 npm init 
 
 npm i react    "react": "^16.12.0", //  react강의 16.8.6
@@ -13,3 +19,5 @@ npm i -D eslint --코딩스타일 통일하기 위한 패키지
 
 
 npm i -g next
+
+npm i antd

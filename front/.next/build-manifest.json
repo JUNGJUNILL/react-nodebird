@@ -1,7 +1,7 @@
 {
   "devFiles": [
-    "static/development/dll/dll_d6a88dbe3071bd165157.js",
-    "static/development/dll/dll_d6a88dbe3071bd165157.js.map"
+    "static/development/dll/dll_9b0eeeefbe3fa17e084b.js",
+    "static/development/dll/dll_9b0eeeefbe3fa17e084b.js.map"
   ],
   "pages": {
     "/_app": [
@@ -17,11 +17,11 @@
       "static/runtime/polyfills.js",
       "static/runtime/polyfills.js.map"
     ],
-    "/about": [
+    "/profile": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ],
-    "/user/create": [
+    "/signup": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"
     ]
