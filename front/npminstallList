@@ -21,3 +21,5 @@ npm i -D eslint --코딩스타일 통일하기 위한 패키지
 npm i -g next
 
 npm i antd
+
+npm i prop-types 
