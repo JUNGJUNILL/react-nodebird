@@ -97,11 +97,12 @@ module.exports =
 /*!*************************!*\
   !*** ./pages/signup.js ***!
   \*************************/
-/*! exports provided: default */
+/*! exports provided: useInput, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInput", function() { return useInput; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
@@ -136,21 +137,21 @@ const TextInput = ({
 
 TextInput.propTypes = {
   value: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string
+}; //커스텀 hooks
+//export const 시 다른데서 import해서 사용할 수 있다. 
+
+const useInput = (initValue = null) => {
+  const {
+    0: value,
+    1: setter
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
+  const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
+    setter(e.target.value);
+  }, []);
+  return [value, handler];
 };
 
 const Signup = () => {
-  //커스텀 hooks
-  const useInput = (initValue = null) => {
-    const {
-      0: value,
-      1: setter
-    } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(initValue);
-    const handler = Object(react__WEBPACK_IMPORTED_MODULE_0__["useCallback"])(e => {
-      setter(e.target.value);
-    }, []);
-    return [value, handler];
-  };
-
   const [id, onChangeId] = useInput('');
   const [nick, onChangeNick] = useInput('');
   const [password, onChangePassword] = useInput('');
@@ -197,33 +198,33 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 79
+      lineNumber: 82
     },
     __self: undefined
   }, __jsx(TextInput, {
     value: 1234,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 80
+      lineNumber: 83
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 81
+      lineNumber: 84
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-id",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 82
+      lineNumber: 85
     },
     __self: undefined
   }, "\uC544\uC774\uB514"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 83
+      lineNumber: 86
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
@@ -233,26 +234,26 @@ const Signup = () => {
     onChange: onChangeId,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 84
+      lineNumber: 87
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 87
+      lineNumber: 90
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-nick",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 88
+      lineNumber: 91
     },
     __self: undefined
   }, "\uB2C9\uB124\uC784"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 89
+      lineNumber: 92
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
@@ -262,26 +263,26 @@ const Signup = () => {
     onChange: onChangeNick,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 90
+      lineNumber: 93
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 93
+      lineNumber: 96
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 94
+      lineNumber: 97
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 95
+      lineNumber: 98
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
@@ -292,26 +293,26 @@ const Signup = () => {
     onChange: onChangePassword,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 96
+      lineNumber: 99
     },
     __self: undefined
   })), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 98
+      lineNumber: 101
     },
     __self: undefined
   }, __jsx("label", {
     htmlFor: "user-password-check",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 99
+      lineNumber: 102
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uD655\uC778"), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 100
+      lineNumber: 103
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"], {
@@ -322,7 +323,7 @@ const Signup = () => {
     onChange: passwordChk,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 101
+      lineNumber: 104
     },
     __self: undefined
   }), passwordError && __jsx("div", {
@@ -331,13 +332,13 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 102
+      lineNumber: 105
     },
     __self: undefined
   }, "\uBE44\uBC00\uBC88\uD638\uAC00 \uB2E4\uB985\uB2C8\uB2E4.")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 104
+      lineNumber: 107
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Checkbox"], {
@@ -345,7 +346,7 @@ const Signup = () => {
     onChange: onchangeTerm,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 105
+      lineNumber: 108
     },
     __self: undefined
   }, "\uB3D9\uC758 \uD558\uC2DC\uACA0\uC2B5\uB2C8\uAE4C?"), termError && __jsx("div", {
@@ -354,7 +355,7 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 106
+      lineNumber: 109
     },
     __self: undefined
   }, "\uC57D\uAD00\uC5D0 \uB3D9\uC758 \uD558\uC154\uC57C \uD569\uB2C8\uB2E4.")), __jsx("div", {
@@ -363,7 +364,7 @@ const Signup = () => {
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 108
+      lineNumber: 111
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -371,7 +372,7 @@ const Signup = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 109
+      lineNumber: 112
     },
     __self: undefined
   }, "\uAC00\uC785\uD558\uAE30"))));
