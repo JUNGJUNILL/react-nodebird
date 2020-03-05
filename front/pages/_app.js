@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 //------------------------------------------ 리덕스 
 import reducer from '../reducers'; 
 import {Provider} from 'react-redux'; 
-import withRedux from 'next-redux-wrapper'
+import withRedux from 'next-redux-wrapper' //next.js에서 리덕스 사용하기 위한 패키지 
 import {createStore,compose,applyMiddleware} from 'redux'
 import { typeAlias } from 'babel-types';
 //------------------------------------------ 
@@ -51,7 +51,7 @@ export default withRedux((initialState,options)=>{
                                !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() :(f) => f,
                                //서버 인 경우 window가 없으므로.. 
                                ); 
-     
+                            //redux devtools 깔면 window에서 __REDUX_DEVTOOLS_EXTENSION__() 를 사용할 수 있다. 
 
         const store = createStore(reducer,initialState,enhancer); 
         return store; 

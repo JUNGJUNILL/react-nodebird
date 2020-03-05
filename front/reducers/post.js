@@ -1,5 +1,13 @@
 export const initialState = {
-    mainPosts : [], 
+ 
+    mainPosts : [{
+        User:{
+            id:1,
+            nickname:'정준일',
+        },
+        content:'첫번째 게시글',
+        img:'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg',
+    }], 
 }
 
 

@@ -5,11 +5,7 @@ import PropTypes from 'prop-types';
 import LoginForm from './LoginForm'; 
 
 const dummy = {
-    nickname: '정준일', 
-    Post: [],
-    Followings:[],
-    Followers:[],
-    isLoggedIn: false, 
+  
 
 }
 const AppLayout = ({children}) =>{

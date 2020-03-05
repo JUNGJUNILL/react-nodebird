@@ -3,7 +3,12 @@
 export const initialState = {
 
     isLoggedIn : false, 
-    user:[], 
+
+    nickname: '정준일', 
+    Post: [],
+    Followings:[],
+    Followers:[],
+    isLoggedIn: false, 
 
 }; 
 
@@ -11,17 +16,17 @@ export const initialState = {
 
 
 //------------------------------------ setState
-const LOG_IN = 'LOG_IN'; //액션의 이름 
-const LOG_OUT = 'LOG_OUT'; 
+export const LOG_IN = 'LOG_IN'; //액션의 이름 
+export const LOG_OUT = 'LOG_OUT'; 
 
-const loginAction = {
+export const loginAction = {
     type:LOG_IN,
     data:{
         nickname:'정준일', 
     }, 
 }
 
-const logOutAction = {
+export const logOutAction = {
     type:LOG_OUT,
 }
 
