@@ -3,9 +3,14 @@ import {Menu, Input,Button,Row, Col,Card,Avatar} from 'antd'
 import Link from 'next/link'; 
 import PropTypes from 'prop-types'; 
 import LoginForm from './LoginForm'; 
+import UserProfile from './UserProfile'
 
 const dummy = {
-  
+    nickname: '정준일', 
+    Post: [],
+    Followings:[],
+    Followers:[],
+    isLoggedIn: false, 
 
 }
 const AppLayout = ({children}) =>{
@@ -25,20 +30,8 @@ const AppLayout = ({children}) =>{
                 {/*xs:모바일, sm:작은화면, md:중간화면, lg:큰 화면*/}
                 <Col xs={24} md={6}>
                    {dummy.isLoggedIn 
-                   ?<Card 
-                        actions={[
-                            <div key="twit">짹짹<br />{dummy.Post.length}</div>,
-                            <div key="follwing">팔로잉<br />{dummy.Followings.length}</div>,
-                            <div key="follower">팔로워<br />{dummy.Followers.length}</div>,
-                                ]}
-                      >              
-                        <Card.Meta 
-                            avatar={<Avatar>{dummy.nickname[0]}</Avatar>}
-                            title={dummy.nickname}
-                        />
-                    </Card>
-                    :
-                    <LoginForm />}
+                   ?<UserProfile />
+                   :<LoginForm />}
                 </Col>
                 <Col xs={24} md={12}>
                     {children}

@@ -111,8 +111,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "prop-types");
 /* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _LoginForm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./LoginForm */ "./components/LoginForm.js");
+/* harmony import */ var _UserProfile__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./UserProfile */ "./components/UserProfile.js");
 var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\components\\AppLayout.js";
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
 
 
 
@@ -132,61 +134,61 @@ const AppLayout = ({
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 20
+      lineNumber: 21
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"], {
     mode: "horizontal",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 21
+      lineNumber: 22
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     key: "home",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 22
+      lineNumber: 23
     },
     __self: undefined
   }, "\uB178\uB4DC\uBC84\uB4DC"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     key: "profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
     href: "/profile",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: undefined
   }, __jsx("a", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 23
+      lineNumber: 24
     },
     __self: undefined
   }, "\uD504\uB85C\uD544"))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Menu"].Item, {
     key: "mail",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 25
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].Search, {
@@ -196,14 +198,14 @@ const AppLayout = ({
     },
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 26
     },
     __self: undefined
   }))), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Row"], {
     gutter: 8,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 29
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -211,73 +213,19 @@ const AppLayout = ({
     md: 6,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 30
+      lineNumber: 31
     },
     __self: undefined
-  }, dummy.isLoggedIn ? __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-    actions: [__jsx("div", {
-      key: "twit",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: undefined
-    }, "\uC9F9\uC9F9", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 34
-      },
-      __self: undefined
-    }), dummy.Post.length), __jsx("div", {
-      key: "follwing",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: undefined
-    }, "\uD314\uB85C\uC789", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 35
-      },
-      __self: undefined
-    }), dummy.Followings.length), __jsx("div", {
-      key: "follower",
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: undefined
-    }, "\uD314\uB85C\uC6CC", __jsx("br", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 36
-      },
-      __self: undefined
-    }), dummy.Followers.length)],
+  }, dummy.isLoggedIn ? __jsx(_UserProfile__WEBPACK_IMPORTED_MODULE_5__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 32
+      lineNumber: 33
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
-    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 40
-      },
-      __self: undefined
-    }, dummy.nickname[0]),
-    title: dummy.nickname,
+  }) : __jsx(_LoginForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 39
-    },
-    __self: undefined
-  })) : __jsx(_LoginForm__WEBPACK_IMPORTED_MODULE_4__["default"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 45
+      lineNumber: 34
     },
     __self: undefined
   })), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -285,7 +233,7 @@ const AppLayout = ({
     md: 12,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 47
+      lineNumber: 36
     },
     __self: undefined
   }, children), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Col"], {
@@ -293,7 +241,7 @@ const AppLayout = ({
     md: 6,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 50
+      lineNumber: 39
     },
     __self: undefined
   }, "\uC138\uBC88\uC9F8")));
@@ -419,6 +367,9 @@ const LoginForm = () => {
     },
     __self: undefined
   })), __jsx("div", {
+    style: {
+      marginTop: '10px'
+    },
     __source: {
       fileName: _jsxFileName,
       lineNumber: 43
@@ -456,6 +407,97 @@ const LoginForm = () => {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (LoginForm);
+
+/***/ }),
+
+/***/ "./components/UserProfile.js":
+/*!***********************************!*\
+  !*** ./components/UserProfile.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\components\\UserProfile.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+const dummy = {
+  nickname: '정준일',
+  Post: [],
+  Followings: [],
+  Followers: [],
+  isLoggedIn: false
+};
+
+const UserProfile = () => {
+  __jsx(Card, {
+    actions: [__jsx("div", {
+      key: "twit",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    }, "\uC9F9\uC9F9", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    }), dummy.Post.length), __jsx("div", {
+      key: "follwing",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }, "\uD314\uB85C\uC789", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 17
+      },
+      __self: undefined
+    }), dummy.Followings.length), __jsx("div", {
+      key: "follower",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: undefined
+    }, "\uD314\uB85C\uC6CC", __jsx("br", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: undefined
+    }), dummy.Followers.length)],
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: undefined
+  }, __jsx(Card.Meta, {
+    avatar: __jsx(Avatar, {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: undefined
+    }, dummy.nickname[0]),
+    title: dummy.nickname,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 21
+    },
+    __self: undefined
+  }));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UserProfile);
 
 /***/ }),
 
@@ -2577,7 +2619,8 @@ const initialState = {
     },
     content: '첫번째 게시글',
     img: 'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg'
-  }]
+  }],
+  imagePaths: []
 };
 const ADD_POST = 'ADD_POST';
 const ADD_DUMMY = 'ADD_DUMMY';
@@ -2644,7 +2687,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //------------------------------------ state
 const initialState = {
   isLoggedIn: false,
-  user: []
+  user: {
+    nickname: '주닐정',
+    Posts: [],
+    Followings: [],
+    Followers: []
+  }
 }; //------------------------------------
 //------------------------------------ setState
 

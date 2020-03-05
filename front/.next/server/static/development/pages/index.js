@@ -93,6 +93,246 @@ module.exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./components/PostCard.js":
+/*!********************************!*\
+  !*** ./components/PostCard.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! prop-types */ "prop-types");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_2__);
+var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\components\\PostCard.js";
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+
+
+const PostCard = ({
+  post
+}) => {
+  return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
+    key: +post.createdAt,
+    cover: post.img && __jsx("img", {
+      alt: "example",
+      src: post.img,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 11
+      },
+      __self: undefined
+    }),
+    actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      type: "retweet",
+      key: "retweet",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 13
+      },
+      __self: undefined
+    }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      type: "heart",
+      key: "heart",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 14
+      },
+      __self: undefined
+    }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      type: "message",
+      key: "message",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 15
+      },
+      __self: undefined
+    }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
+      type: "ellipsis",
+      key: "ellipsis",
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 16
+      },
+      __self: undefined
+    })],
+    extra: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 18
+      },
+      __self: undefined
+    }, "\uD314\uB85C\uC6B0"),
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 9
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
+    avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 21
+      },
+      __self: undefined
+    }, post.User.nickname[0]),
+    title: post.User.nickname,
+    description: post.content,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }));
+};
+
+PostCard.PropTypes = {
+  post: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.shape({
+    User: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object,
+    content: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    img: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.string,
+    createdAt: prop_types__WEBPACK_IMPORTED_MODULE_2___default.a.object
+  })
+};
+/* harmony default export */ __webpack_exports__["default"] = (PostCard);
+
+/***/ }),
+
+/***/ "./components/PostForm.js":
+/*!********************************!*\
+  !*** ./components/PostForm.js ***!
+  \********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\components\\PostForm.js";
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+
+const dummy = {
+  isLoggedIn: true,
+  imagePaths: [],
+  mainPosts: [{
+    User: {
+      id: 1,
+      nickname: '주닐정'
+    },
+    content: '첫번째 글',
+    img: 'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg'
+  }]
+};
+
+const PostForm = () => {
+  return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
+    style: {
+      margin: '10px 0 20px'
+    },
+    encType: "multipart/form-data",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 24
+    },
+    __self: undefined
+  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
+    maxLength: 140,
+    placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB2C8?",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 25
+    },
+    __self: undefined
+  }), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 26
+    },
+    __self: undefined
+  }, __jsx("input", {
+    type: "file",
+    multiple: true,
+    hidden: true,
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 27
+    },
+    __self: undefined
+  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 28
+    },
+    __self: undefined
+  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+    type: "primary",
+    style: {
+      float: 'right'
+    },
+    htmlType: "submit",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 29
+    },
+    __self: undefined
+  }, "\uC9F9\uC9F9")), __jsx("div", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 31
+    },
+    __self: undefined
+  }, dummy.imagePaths.map((v, i) => {
+    return __jsx("div", {
+      key: i,
+      style: {
+        display: 'inline-block'
+      },
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 34
+      },
+      __self: undefined
+    }, __jsx("img", {
+      src: `http://localhost:3065/` + v,
+      style: {
+        width: '200px'
+      },
+      alt: v,
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 35
+      },
+      __self: undefined
+    }), __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 36
+      },
+      __self: undefined
+    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 37
+      },
+      __self: undefined
+    }, "\uC81C\uAC70")));
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (PostForm);
+
+/***/ }),
+
 /***/ "./pages/index.js":
 /*!************************!*\
   !*** ./pages/index.js ***!
@@ -104,11 +344,13 @@ module.exports =
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
+/* harmony import */ var _components_PostForm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../components/PostForm */ "./components/PostForm.js");
+/* harmony import */ var _components_PostCard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/PostCard */ "./components/PostCard.js");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! antd */ "antd");
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _reducers_user__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../reducers/user */ "./reducers/user.js");
 var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\pages\\index.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
@@ -117,31 +359,21 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
 
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [{
-    User: {
-      id: 1,
-      nickname: '정준일'
-    },
-    content: '첫번째 게시글',
-    img: 'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg'
-  }]
-}; //react hooks 나오기 전 방식 
+
+ //react hooks 나오기 전 방식 
 //const Home = ({user,dispath,login,logout}) =>{
 //react hooks방식
 
 const Home = () => {
-  const dispath = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])(); //리덕스 액션 실행기 
+  const dispath = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useDispatch"])(); //리덕스 액션 실행기 
 
   const {
     user,
     isLoggedIn
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.user);
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.user);
   const {
     mainPosts
-  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post); //useSelector로 리덕스 state전체를 가져올 수 있다. 
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_4__["useSelector"])(state => state.post); //useSelector로 리덕스 state전체를 가져올 수 있다. 
   //useState가 useSelector로 바뀌었다고 생각하자.
 
   console.log(user);
@@ -152,7 +384,7 @@ const Home = () => {
     //         nickname:'준일정',
     //     }
     // })
-    dispath(_reducers_user__WEBPACK_IMPORTED_MODULE_3__["loginAction"]);
+    dispath(_reducers_user__WEBPACK_IMPORTED_MODULE_5__["loginAction"]);
   }, []);
   /*
   useEffect(()=>{
@@ -165,185 +397,37 @@ const Home = () => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 52
+      lineNumber: 42
     },
     __self: undefined
   }, user ? __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 43
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778 \uD588\uC2B5\uB2C8\uB2E4.", user.nickname) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 53
+      lineNumber: 43
     },
     __self: undefined
-  }, "\uB85C\uADF8\uC544\uC6C3 \uD588\uC2B5\uB2C8\uB2E4."), isLoggedIn && __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
-    style: {
-      marginBottom: 20
-    },
-    encType: "multipart/form-data",
+  }, "\uB85C\uADF8\uC544\uC6C3 \uD588\uC2B5\uB2C8\uB2E4."), isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 54
+      lineNumber: 44
     },
     __self: undefined
-  }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
-    maxLength: 140,
-    placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB2C8?",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 55
-    },
-    __self: undefined
-  }), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 56
-    },
-    __self: undefined
-  }, __jsx("input", {
-    type: "file",
-    multiple: true,
-    hidden: true,
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 57
-    },
-    __self: undefined
-  }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 58
-    },
-    __self: undefined
-  }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-    type: "primary",
-    style: {
-      float: 'right'
-    },
-    htmlType: "submit",
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 59
-    },
-    __self: undefined
-  }, "\uC9F9\uC9F9")), __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 61
-    },
-    __self: undefined
-  }, dummy.imagePaths.map((v, i) => {
-    return __jsx("div", {
+  }), mainPosts.map((v, i) => {
+    return __jsx(_components_PostCard__WEBPACK_IMPORTED_MODULE_2__["default"], {
       key: i,
-      style: {
-        display: 'inline-block'
-      },
+      post: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 64
+        lineNumber: 47
       },
       __self: undefined
-    }, __jsx("img", {
-      src: `http://localhost:3065/` + v,
-      style: {
-        width: '200px'
-      },
-      alt: v,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 65
-      },
-      __self: undefined
-    }), __jsx("div", {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 66
-      },
-      __self: undefined
-    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 67
-      },
-      __self: undefined
-    }, "\uC81C\uAC70")));
-  }))), dummy.mainPosts.map((v, i) => {
-    return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"], {
-      key: i,
-      cover: v.img && __jsx("img", {
-        alt: "example",
-        src: v.img,
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 78
-        },
-        __self: undefined
-      }),
-      actions: [__jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-        type: "retweet",
-        key: "retweet",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 80
-        },
-        __self: undefined
-      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-        type: "heart",
-        key: "heart",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 81
-        },
-        __self: undefined
-      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-        type: "message",
-        key: "message",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 82
-        },
-        __self: undefined
-      }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Icon"], {
-        type: "ellipsis",
-        key: "ellipsis",
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 83
-        },
-        __self: undefined
-      })],
-      extra: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 85
-        },
-        __self: undefined
-      }, "\uD314\uB85C\uC6B0"),
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 77
-      },
-      __self: undefined
-    }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Card"].Meta, {
-      avatar: __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Avatar"], {
-        __source: {
-          fileName: _jsxFileName,
-          lineNumber: 88
-        },
-        __self: undefined
-      }, v.User.nickname[0]),
-      title: v.User.nickname,
-      description: v.content,
-      __source: {
-        fileName: _jsxFileName,
-        lineNumber: 87
-      },
-      __self: undefined
-    }));
+    });
   }));
 };
 /*
@@ -392,7 +476,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //------------------------------------ state
 const initialState = {
   isLoggedIn: false,
-  user: []
+  user: {
+    nickname: '주닐정',
+    Posts: [],
+    Followings: [],
+    Followers: []
+  }
 }; //------------------------------------
 //------------------------------------ setState
 
@@ -459,6 +548,17 @@ module.exports = __webpack_require__(/*! c:\git Repository\react-nodebird\front\
 /***/ (function(module, exports) {
 
 module.exports = require("antd");
+
+/***/ }),
+
+/***/ "prop-types":
+/*!*****************************!*\
+  !*** external "prop-types" ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("prop-types");
 
 /***/ }),
 

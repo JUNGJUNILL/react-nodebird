@@ -8,6 +8,7 @@ export const initialState = {
         content:'첫번째 게시글',
         img:'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg',
     }], 
+    imagePaths : [], 
 }
 
 

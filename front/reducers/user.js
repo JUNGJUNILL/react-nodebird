@@ -2,13 +2,14 @@
 //------------------------------------ state
 export const initialState = {
 
-    isLoggedIn : false, 
+    isLoggedIn : false,     
+    user:{
+        nickname:'주닐정',
+        Posts:[],
+        Followings:[],
+        Followers:[],
 
-    nickname: '정준일', 
-    Post: [],
-    Followings:[],
-    Followers:[],
-    isLoggedIn: false, 
+    },
 
 }; 
 
