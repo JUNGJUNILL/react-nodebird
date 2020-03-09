@@ -2,6 +2,9 @@ import React, {useState,useCallback} from 'react';
 import {Form,Button} from 'antd'
 import Link from 'next/link';
 import {useInput} from '../pages/signup'; //<- export const 받는 방법 
+import {useDispatch} from 'react-redux'
+import { loginAction} from '../reducers/user';
+
 /*
         export const useInput =(initValue = null) =>{
             const [value,setter] = useState(initValue); 
@@ -17,10 +20,12 @@ const LoginForm = () =>{
 
     const [id,onChangeId] = useInput(''); 
     const [password,onChangePassword] = useInput(''); 
+    const dispatch  = useDispatch(); 
 
                         //자식 컴포넌트에 넘기는 함수는 무조건 useCallback(아직 공부가 안됨)
     const onSubmitForm =useCallback((e) =>{
         e.preventDefault(); 
+        dispatch(loginAction); 
         console.log({
             id,
             password

@@ -1,24 +1,12 @@
 import react,{useEffect} from 'react'
 import {Form, Input, Button} from 'antd'
 
+import {useSelector} from 'react-redux'
 
-const dummy = {
-    isLoggedIn : true, 
-    imagePaths:[],
-    mainPosts:[{
-
-            User:{
-                id:1,
-                nickname:'주닐정',
-            },
-            content:'첫번째 글',
-            img:'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg',
-        
-        }],
-};
 
 
 const PostForm = ()=>{
+    const {imagePaths} =useSelector(state=>state.post); 
 
                 return(
                             <Form style={{margin: '10px 0 20px'}} encType="multipart/form-data">
@@ -29,7 +17,7 @@ const PostForm = ()=>{
                                         <Button type="primary" style={{float:'right'}} htmlType="submit">짹짹</Button>
                                     </div>
                                     <div>
-                                        {dummy.imagePaths.map((v,i)=>{
+                                        {imagePaths.map((v,i)=>{
                                             return (
                                                     <div key={i} style={{ display:'inline-block'}}>
                                                         <img src={`http://localhost:3065/`+v} style={{width:'200px'}} alt={v} />

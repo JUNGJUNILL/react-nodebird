@@ -216,25 +216,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! antd */ "antd");
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(antd__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "react-redux");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_2__);
 var _jsxFileName = "c:\\git Repository\\react-nodebird\\front\\components\\PostForm.js";
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
 
-const dummy = {
-  isLoggedIn: true,
-  imagePaths: [],
-  mainPosts: [{
-    User: {
-      id: 1,
-      nickname: '주닐정'
-    },
-    content: '첫번째 글',
-    img: 'https://cdn.eyesmag.com/wp-content/uploads/2019/05/2019-parasite-film-by-bong-reasons-to-be-waiting-06.jpg'
-  }]
-};
+
 
 const PostForm = () => {
+  const {
+    imagePaths
+  } = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(state => state.post);
   return __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Form"], {
     style: {
       margin: '10px 0 20px'
@@ -242,7 +236,7 @@ const PostForm = () => {
     encType: "multipart/form-data",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 24
+      lineNumber: 12
     },
     __self: undefined
   }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Input"].TextArea, {
@@ -250,13 +244,13 @@ const PostForm = () => {
     placeholder: "\uC5B4\uB5A4 \uC2E0\uAE30\uD55C \uC77C\uC774 \uC788\uC5C8\uB2C8?",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 25
+      lineNumber: 13
     },
     __self: undefined
   }), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 26
+      lineNumber: 14
     },
     __self: undefined
   }, __jsx("input", {
@@ -265,13 +259,13 @@ const PostForm = () => {
     hidden: true,
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 27
+      lineNumber: 15
     },
     __self: undefined
   }), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 28
+      lineNumber: 16
     },
     __self: undefined
   }, "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC"), __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
@@ -282,16 +276,16 @@ const PostForm = () => {
     htmlType: "submit",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 29
+      lineNumber: 17
     },
     __self: undefined
   }, "\uC9F9\uC9F9")), __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 31
+      lineNumber: 19
     },
     __self: undefined
-  }, dummy.imagePaths.map((v, i) => {
+  }, imagePaths.map((v, i) => {
     return __jsx("div", {
       key: i,
       style: {
@@ -299,7 +293,7 @@ const PostForm = () => {
       },
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 34
+        lineNumber: 22
       },
       __self: undefined
     }, __jsx("img", {
@@ -310,19 +304,19 @@ const PostForm = () => {
       alt: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 35
+        lineNumber: 23
       },
       __self: undefined
     }), __jsx("div", {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 36
+        lineNumber: 24
       },
       __self: undefined
     }, __jsx(antd__WEBPACK_IMPORTED_MODULE_1__["Button"], {
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 37
+        lineNumber: 25
       },
       __self: undefined
     }, "\uC81C\uAC70")));
@@ -377,15 +371,18 @@ const Home = () => {
   //useState가 useSelector로 바뀌었다고 생각하자.
 
   console.log(user);
-  Object(react__WEBPACK_IMPORTED_MODULE_0__["useEffect"])(() => {
-    // dispath({
-    //     type:LOG_IN, 
-    //     data:{
-    //         nickname:'준일정',
-    //     }
-    // })
-    dispath(_reducers_user__WEBPACK_IMPORTED_MODULE_5__["loginAction"]);
-  }, []);
+  /*
+  useEffect(()=>{
+      // dispath({
+      //     type:LOG_IN, 
+      //     data:{
+      //         nickname:'준일정',
+      //     }
+      // })
+      dispath(loginAction); 
+    },[]); 
+  */
+
   /*
   useEffect(()=>{
   
@@ -397,25 +394,25 @@ const Home = () => {
   return __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 42
+      lineNumber: 43
     },
     __self: undefined
   }, user ? __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: undefined
   }, "\uB85C\uADF8\uC778 \uD588\uC2B5\uB2C8\uB2E4.", user.nickname) : __jsx("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 43
+      lineNumber: 44
     },
     __self: undefined
   }, "\uB85C\uADF8\uC544\uC6C3 \uD588\uC2B5\uB2C8\uB2E4."), isLoggedIn && __jsx(_components_PostForm__WEBPACK_IMPORTED_MODULE_1__["default"], {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 44
+      lineNumber: 45
     },
     __self: undefined
   }), mainPosts.map((v, i) => {
@@ -424,7 +421,7 @@ const Home = () => {
       post: v,
       __source: {
         fileName: _jsxFileName,
-        lineNumber: 47
+        lineNumber: 48
       },
       __self: undefined
     });
@@ -473,15 +470,16 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-//------------------------------------ state
+const dummyUser = {
+  nickname: '주닐정',
+  Post: [],
+  Followings: [],
+  Followers: []
+}; //------------------------------------ state
+
 const initialState = {
   isLoggedIn: false,
-  user: {
-    nickname: '주닐정',
-    Posts: [],
-    Followings: [],
-    Followers: []
-  }
+  user: null
 }; //------------------------------------
 //------------------------------------ setState
 
@@ -489,10 +487,7 @@ const LOG_IN = 'LOG_IN'; //액션의 이름
 
 const LOG_OUT = 'LOG_OUT';
 const loginAction = {
-  type: LOG_IN,
-  data: {
-    nickname: '정준일'
-  }
+  type: LOG_IN
 };
 const logOutAction = {
   type: LOG_OUT
@@ -504,7 +499,7 @@ const reducer = (state = initialState, action) => {
       {
         return _objectSpread({}, state, {
           isLoggedIn: true,
-          user: action.data
+          user: dummyUser
         });
       }
 
