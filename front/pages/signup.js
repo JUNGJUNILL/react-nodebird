@@ -1,6 +1,8 @@
 import React, {useState,useCallback,memo} from 'react'
 import {Form,Input,Checkbox, Button} from 'antd'
 import PropTypes from 'prop-types'; 
+import {useDispatch} from 'react-redux'
+import {SignUpAction} from '../reducers/user';
 
 //props로 넘겨주는 함수는 useCallback 필수 
 // useCallback(callback,[]);
@@ -49,6 +51,7 @@ const Signup = () =>{
         const [term, setTerm] = useState(false); 
         const [passwordError,setPasswordError] = useState(false); 
         const [termError,setTermError] = useState(false); 
+        const dispatch = useDispatch(); 
 
         const onSubmit = useCallback((e) =>{
             e.preventDefault();
@@ -59,6 +62,13 @@ const Signup = () =>{
             if(!term){
                 return setTermError(true); 
             }
+
+            dispatch(SignUpAction({
+                id,
+                password,
+                nick,
+            })); 
+
         },[password,passwordCheck,term]);
 
         const passwordChk  = useCallback((e) =>{

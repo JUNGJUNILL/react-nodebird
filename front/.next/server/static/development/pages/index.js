@@ -454,14 +454,16 @@ export default connect(mapStateToProps,mapDispatchToProps)(Home);
 /*!**************************!*\
   !*** ./reducers/user.js ***!
   \**************************/
-/*! exports provided: initialState, LOG_IN, LOG_OUT, loginAction, logOutAction, default */
+/*! exports provided: initialState, SIGN_UP, LOG_IN, LOG_OUT, SignUpAction, loginAction, logOutAction, default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "initialState", function() { return initialState; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SIGN_UP", function() { return SIGN_UP; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_IN", function() { return LOG_IN; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOG_OUT", function() { return LOG_OUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpAction", function() { return SignUpAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "loginAction", function() { return loginAction; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logOutAction", function() { return logOutAction; });
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -474,7 +476,8 @@ const dummyUser = {
   nickname: '주닐정',
   Post: [],
   Followings: [],
-  Followers: []
+  Followers: [],
+  signUpData: {}
 }; //------------------------------------ state
 
 const initialState = {
@@ -483,9 +486,17 @@ const initialState = {
 }; //------------------------------------
 //------------------------------------ setState
 
+const SIGN_UP = 'SIGN_UP';
 const LOG_IN = 'LOG_IN'; //액션의 이름 
 
-const LOG_OUT = 'LOG_OUT';
+const LOG_OUT = 'LOG_OUT'; //action에 넣을 데이터가 동적인 경우에는 action을 함수로 만들어야 한다.
+
+const SignUpAction = data => {
+  return {
+    type: SIGN_UP,
+    data: data
+  };
+};
 const loginAction = {
   type: LOG_IN
 };
@@ -508,6 +519,13 @@ const reducer = (state = initialState, action) => {
         return _objectSpread({}, state, {
           isLoggedIn: false,
           user: null
+        });
+      }
+
+    case SIGN_UP:
+      {
+        return _objectSpread({}, state, {
+          signUpData: action.data
         });
       }
 
