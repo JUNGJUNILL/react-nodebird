@@ -14,7 +14,12 @@ import withRedux from 'next-redux-wrapper' //next.js에서 리덕스 사용하�
 import {createStore,compose,applyMiddleware} from 'redux'
 import { typeAlias } from 'babel-types';
 //------------------------------------------ 
- 
+
+//------------------------------------------ 리덕스 사가
+import createSagaMiddleware from 'redux-saga';
+import rootSaga from '../sagas';
+
+//------------------------------------------ 
 const NodeBird = ({Component,store}) =>{
                     //next.js에서 넣어줌
 
@@ -41,19 +46,25 @@ NodeBird.propTypes ={
 
 export default withRedux((initialState,options)=>{
 
-        const middlewares = []; 
+    const sagaMiddleware = createSagaMiddleware();
+    const middlewares = [sagaMiddleware]; //사가 미들웨어 리덕스에 연결 
         //미들웨어는 ACTION과 STORE 사이에서 동작한다. 
        
                          //compose 미들웨어 여러개 합성하는거 
-        const enhancer = compose(
+        const enhancer = 
+                        process.env.NODE_ENV ==='production' 
+                        ?  compose(applyMiddleware(...middlewares))    
+                        :  compose(
                                 applyMiddleware(...middlewares),
-                               //typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() :(f) => f,
-                               !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() :(f) => f,
-                               //서버 인 경우 window가 없으므로.. 
-                               ); 
-                            //redux devtools 깔면 window에서 __REDUX_DEVTOOLS_EXTENSION__() 를 사용할 수 있다. 
+                                //typeof window !== 'undefined' && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() :(f) => f,
+                                !options.isServer && window.__REDUX_DEVTOOLS_EXTENSION__ !== 'undefined' ? window.__REDUX_DEVTOOLS_EXTENSION__() :(f) => f,
+                                //서버 인 경우 window가 없으므로.. 
+                                ) 
+                                            
+                                    //redux devtools 깔면 window에서 __REDUX_DEVTOOLS_EXTENSION__() 를 사용할 수 있다. 
 
         const store = createStore(reducer,initialState,enhancer); 
+        sagaMiddleware.run(rootSaga);
         return store; 
 })(NodeBird); 
 //props를 넣어줌, store사용할 수 있게 해줌 

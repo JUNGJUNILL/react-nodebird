@@ -38,4 +38,11 @@ npm i prop-types
     - _app.js에서 리덕스 store를 import해서 사용해야 한다.
     - next.js에서 리덕스를 사용하기 위해 npm i next-redux-wrapper 라는 패키지 설치 해야 한다.(리엑트에서 리덕스 사용하는 것과 next.js에서 리덕스 사용하는게 다르다고 한다.)
     - redux devtool를 쓰기 위해서는 코드를 하나 연결해 줘야 한다. 
-    
+
+리덕스 사가 
+    --리덕스는 동기적 요청 밖에 못하기 때매 비동기 요청을 위해 리덕스 사가를 사용한다.
+    -- npm i redux-saga
+
+
+
+
