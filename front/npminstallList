@@ -39,3 +39,4 @@ npm i prop-types
     - next.js에서 리덕스를 사용하기 위해 npm i next-redux-wrapper 라는 패키지 설치 해야 한다.(리엑트에서 리덕스 사용하는 것과 next.js에서 리덕스 사용하는게 다르다고 한다.)
     - redux devtool를 쓰기 위해서는 코드를 하나 연결해 줘야 한다. 
     
+!
